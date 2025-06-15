@@ -31,9 +31,13 @@
     :root {
         /* Primary colors */
         --clr-light-red: hsl(0, 100%, 67%);
+        --clr-light-red-faded: hsla(0, 100%, 67%, 0.423);
         --clr-orange-yellow: hsl(39, 100%, 56%);
+        --clr-orange-yellow-faded: hsla(39, 100%, 56%, 0.423);
         --clr-green-teal: hsl(166, 100%, 37%);
+        --clr-green-teal-faded: hsla(166, 100%, 37%, 0.423);
         --clr-cobalt-blue: hsl(234, 85%, 45%);
+        --clr-cobalt-blue-faded: hsla(234, 85%, 45%, 0.423);
         /* Gradient colors */
         --clr-gradient-light-slate-blue-bckgr: hsl(252, 100%, 67%);
         --clr-gradient-light-royal-blue-bckgr: hsl(241, 81%, 54%);
@@ -45,11 +49,12 @@
         --clr-light-lavender: hsl(241, 100%, 89%);
         --clr-dark-gray-blue: hsl(224, 30%, 27%);
         /* Font colors */
-        --font-results: var(--clr-pale-blue);
-        --font-results-highlight: var(--clr-white);
+        --font-results-h1-description: var(--clr-pale-blue);
+        --font-results-points: var(--clr-white);
+        --font-results-points-secondary: var(--clr-dark-gray-blue);
         --font-results-secondary: var(--clr-dark-gray-blue);
-        --font-summary: var(--clr-gradient-persian-blue-circle);
-        --font-summary-highlight: var(--clr-dark-gray-blue);
+        --font-summary-score-dark: var(--clr-gradient-persian-blue-circle);
+        --font-summary-score: var(--clr-dark-gray-blue);
 
         /* Layout colors */
         --layout-main-background: var(--clr-light-lavender);
@@ -62,7 +67,26 @@
         --layout-memory: var(--clr-orange-yellow);
         --layout-verbal: var(--clr-green-teal);
         --layout-visual: var(--clr-cobalt-blue);
-        --layout-continue-btn: var(--clr-gradient-persian-blue-circle);
+        --layout-continue-btn-light: var(--clr-gradient-light-slate-blue-bckgr);
+        --layout-continue-btn-dark: var(--clr-gradient-light-royal-blue-bckgr);
 
+    }
+}
+
+@layer layout {
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+    }
+
+    footer {
+        font-size: 11px; 
+        text-align: center;
+        padding: 0;
+        a > {
+            color: hsl(228, 45%, 44%);
+        }
     }
 }

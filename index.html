@@ -6,41 +6,54 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Results summary component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <main>
+    <section>
+      <div class="container">
+        <div class="result">
+          <h1>Your Result</h1>
+          <div class="score">
+            <span class="score-points">76</span>
+            <span class="score-points-secondry">of 100</span>
+          </div>
+          <p class="result-text">Great</p>
+          <p class="result-description">You scored higher than 65% of the people who have taken these tests.</p>
+        </div>
 
-  Your Result
-  76
-  of 100
-
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
-
-  Reaction
-  80 / 100
-
-  Memory
-  92 / 100
-
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
+        <div class="summary">
+          <h2>Summary</h2>
+          <ul class="summary-list">
+            <li class="reaction">
+              <img src="/assets/images/icon-reaction.svg" alt="thunderbolt icon">
+              <span class="category reaction">Reaction</span>
+              <span class="score"><span class="score-dark">80</span> / 100</span>
+            </li>
+            <li class="memory">
+              <img src="/assets/images/icon-memory.svg" alt="brain icon">
+              <span class="category memory">Memory</span>
+              <span class="score"><span class="score-dark">92</span> / 100</span>
+            </li>
+            <li class="verbal">
+              <img src="/assets/images/icon-verbal.svg" alt="dialogue icon">
+              <span class="category verbal">Verbal</span>
+              <span class="score"><span class="score-dark">61</span> / 100</span>
+            </li>
+            <li class="visual">
+              <img src="/assets/images/icon-visual.svg" alt="eye icon">
+              <span class="category visual">Visual</span>
+              <span class="score"><span class="score-dark">72</span> / 100</span>
+            </li>
+          </ul>
+          <a href="#">Continue</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Willem Savio Freeke</a>.
-  </div>
+  </footer>
+  <script src="./script.js"></script>
 </body>
 </html>
