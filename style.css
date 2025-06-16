@@ -45,24 +45,24 @@
         --clr-gradient-persian-blue-circle: hsla(241, 72%, 46%, 0);
         /* Neutral colors */
         --clr-white: hsl(0, 0%, 100%);
-        --clr-pale-blue: hsl(221, 100%, 96%);
+        --clr-faded-gray: hsla(0, 0%, 59%, 0.668);
+        --clr-pale-blue: hsla(222, 100%, 96%, 0.735);
         --clr-light-lavender: hsl(241, 100%, 89%);
         --clr-dark-gray-blue: hsl(224, 30%, 27%);
         /* Font colors */
         --font-results-h1-description: var(--clr-pale-blue);
         --font-results-points: var(--clr-white);
-        --font-results-points-secondary: var(--clr-dark-gray-blue);
-        --font-results-secondary: var(--clr-dark-gray-blue);
+        --font-results-points-secondary: var(--clr-faded-gray);
+        --font-results-text: var(--clr-white);
         --font-summary-score-dark: var(--clr-gradient-persian-blue-circle);
         --font-summary-score: var(--clr-dark-gray-blue);
-
         /* Layout colors */
-        --layout-main-background: var(--clr-light-lavender);
+        --layout-main-background: var(--clr-pale-blue);
         --layout-card-gradient-light: var(--clr-gradient-light-slate-blue-bckgr);
         --layout-card-gradient-dark: var(--clr-gradient-light-royal-blue-bckgr);
         --layout-card-circle-light: var(--clr-gradient-violet-blue-circle);
         --layout-card-circle-dark: var(--clr-gradient-persian-blue-circle);
-        --layout-card-background: var(--clr-pale-blue);
+        --layout-card-background: var(--clr-white);
         --layout-reaction: var(--clr-light-red);
         --layout-memory: var(--clr-orange-yellow);
         --layout-verbal: var(--clr-green-teal);
@@ -79,6 +79,92 @@
         margin: 0;
         padding: 0;
         text-decoration: none;
+    }
+
+    body {
+        font-family: 'Hanken Grotesk', sans-serif;
+        background-color: var(--layout-main-background);
+        font-size: 18px;
+        line-height: 1.5;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        max-width: 700px;
+        height: 500px;
+        background-color: var(--layout-card-background);
+        border-radius: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .container > div {
+        padding: 40px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .result {
+        background: linear-gradient(180deg, var(--layout-card-gradient-light), var(--layout-card-gradient-dark));
+        border-radius: 30px;
+        color: var(--font-results-h1-description);
+    }
+
+    .result h1 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .main-score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        background: linear-gradient(180deg, var(--layout-card-circle-light), var(--layout-card-circle-dark));
+        border-radius: 100%;
+        width: 190px;
+        height: 190px;
+    }
+
+    .score-points {
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--font-results-points);
+    }
+
+    .score-points-secondary {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--font-results-points-secondary);
+    }
+
+    .result-text {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--font-results-text);
+        margin-top: 10px;
     }
 
     footer {
