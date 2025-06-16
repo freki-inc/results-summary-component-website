@@ -31,13 +31,13 @@
     :root {
         /* Primary colors */
         --clr-light-red: hsl(0, 100%, 67%);
-        --clr-light-red-faded: hsla(0, 100%, 67%, 0.423);
+        --clr-light-red-faded: hsla(0, 100%, 67%, 0.081);
         --clr-orange-yellow: hsl(39, 100%, 56%);
-        --clr-orange-yellow-faded: hsla(39, 100%, 56%, 0.423);
+        --clr-orange-yellow-faded: hsla(39, 100%, 56%, 0.081);
         --clr-green-teal: hsl(166, 100%, 37%);
-        --clr-green-teal-faded: hsla(166, 100%, 37%, 0.423);
+        --clr-green-teal-faded: hsla(166, 100%, 37%, 0.081);
         --clr-cobalt-blue: hsl(234, 85%, 45%);
-        --clr-cobalt-blue-faded: hsla(234, 85%, 45%, 0.423);
+        --clr-cobalt-blue-faded: hsla(234, 85%, 45%, 0.081);
         /* Gradient colors */
         --clr-gradient-light-slate-blue-bckgr: hsl(252, 100%, 67%);
         --clr-gradient-light-royal-blue-bckgr: hsl(241, 81%, 54%);
@@ -48,32 +48,45 @@
         --clr-faded-gray: hsla(0, 0%, 59%, 0.668);
         --clr-pale-blue: hsla(222, 100%, 96%, 0.735);
         --clr-light-lavender: hsl(241, 100%, 89%);
+        --clr-light-lavender-faded: hsla(241, 100%, 89%, 0.45);
         --clr-dark-gray-blue: hsl(224, 30%, 27%);
         /* Font colors */
         --font-results-h1-description: var(--clr-pale-blue);
         --font-results-points: var(--clr-white);
         --font-results-points-secondary: var(--clr-faded-gray);
         --font-results-text: var(--clr-white);
-        --font-summary-score-dark: var(--clr-gradient-persian-blue-circle);
-        --font-summary-score: var(--clr-dark-gray-blue);
+        --font-summary-h1: var(--clr-dark-gray-blue);
+        --font-reaction: var(--clr-light-red);
+        --font-memory: var(--clr-orange-yellow);
+        --font-verbal: var(--clr-green-teal);
+        --font-visual: var(--clr-cobalt-blue);
+        --font-summary-score-dark: var(--clr-dark-gray-blue);
+        --font-summary-score: var(--clr-faded-gray);
+        --font-continue-btn: var(--clr-white);
         /* Layout colors */
         --layout-main-background: var(--clr-pale-blue);
+        --layout-card-box-shadow: var(--clr-light-lavender-faded);
         --layout-card-gradient-light: var(--clr-gradient-light-slate-blue-bckgr);
         --layout-card-gradient-dark: var(--clr-gradient-light-royal-blue-bckgr);
         --layout-card-circle-light: var(--clr-gradient-violet-blue-circle);
         --layout-card-circle-dark: var(--clr-gradient-persian-blue-circle);
         --layout-card-background: var(--clr-white);
-        --layout-reaction: var(--clr-light-red);
-        --layout-memory: var(--clr-orange-yellow);
-        --layout-verbal: var(--clr-green-teal);
-        --layout-visual: var(--clr-cobalt-blue);
+        --layout-reaction: var(--clr-light-red-faded);
+        --layout-memory: var(--clr-orange-yellow-faded);
+        --layout-verbal: var(--clr-green-teal-faded);
+        --layout-visual: var(--clr-cobalt-blue-faded);
+        --layout-continue-btn: var(--clr-dark-gray-blue);
         --layout-continue-btn-light: var(--clr-gradient-light-slate-blue-bckgr);
         --layout-continue-btn-dark: var(--clr-gradient-light-royal-blue-bckgr);
-
     }
 }
 
 @layer layout {
+    :root {
+        /* Padding card */
+        --layout-card-padding: 40px 55px 50px 55px;
+    }
+
     *, *::before, *::after {
         box-sizing: border-box;
         margin: 0;
@@ -108,26 +121,24 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         width: 100%;
-        max-width: 700px;
-        height: 500px;
+        max-width: 740px;
+        height: 536px;
         background-color: var(--layout-card-background);
         border-radius: 30px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 7px 15px 20px var(--layout-card-box-shadow);
         overflow: hidden;
-    }
-
-    .container > div {
-        padding: 40px 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
     }
 
     .result {
         background: linear-gradient(180deg, var(--layout-card-gradient-light), var(--layout-card-gradient-dark));
         border-radius: 30px;
         color: var(--font-results-h1-description);
+        padding: var(--layout-card-padding);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
     }
 
     .result h1 {
@@ -140,6 +151,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-top: 20px;;
         margin-bottom: 10px;
         background: linear-gradient(180deg, var(--layout-card-circle-light), var(--layout-card-circle-dark));
         border-radius: 100%;
@@ -161,10 +173,102 @@
     }
 
     .result-text {
-        font-size: 24px;
+        font-size: 32px;
         font-weight: 700;
         color: var(--font-results-text);
-        margin-top: 10px;
+    }
+
+    .result-description {
+        font-weight: 500;
+    }
+
+    .summary {
+        padding: var(--layout-card-padding);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .summary h1 {
+        font-size: 24px;
+        font-weight: 700;
+        align-self: flex-start;
+        color: var(--font-summary-h1);
+        margin-bottom: 25px;
+    }
+
+    .box {
+        padding: 15px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    li {
+        list-style: none;
+        width: 100%;
+        margin-bottom: 15px;;
+    }
+
+    .score {
+        color: var(--font-summary-score);
+        font-weight: 700;
+    }
+
+    .score-dark {
+        color: var(--font-summary-score-dark);
+        margin-right: 0.2rem;
+    }
+
+    .reaction {
+        background-color: var(--layout-reaction);
+        color: var(--font-reaction);
+    }
+
+    .category {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .memory {
+        background-color: var(--layout-memory);
+        color: var(--font-memory);
+    }
+
+    .verbal {
+        background-color: var(--layout-verbal);
+        color: var(--font-verbal);
+    }
+
+    .visual {
+        background-color: var(--layout-visual);
+        color: var(--font-visual);
+    }
+
+    .cont-btn {
+        display: inline-block;
+        width: 100%;
+        padding: 15px 30px;
+        background: var(--layout-continue-btn);
+        color: var(--font-continue-btn);
+        font-weight: 700;
+        border-radius: 50px;
+        text-decoration: none;
+        margin-top: 30px;
+    }
+
+    .cont-btn:hover {
+        background: linear-gradient(180deg, var(--layout-continue-btn-light), var(--layout-continue-btn-dark));
     }
 
     footer {
