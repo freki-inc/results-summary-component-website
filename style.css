@@ -133,8 +133,10 @@
 
         @media (width <= 900px) {
             grid-template-columns: 1fr;
-            max-width: 100%;
-            height: auto;
+            max-width: 375px;
+            height: 100vh;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
     }
 
@@ -150,7 +152,17 @@
         text-align: center;
 
         @media (width <= 900px) {
-            padding: 30px 80px;
+            padding: 30px 60px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        @media (width <= 371px) {
+            padding: 30px 45px;
+        }
+
+        @media (width <= 341px) {
+            padding: 30px 30px;
         }
     }
 
@@ -160,7 +172,7 @@
 
         @media (width <= 900px) {
             font-size: 18px;
-            margin-top: 45px;
+            margin-top: 0;
         }
     }
 
@@ -232,8 +244,8 @@
         justify-content: space-between;
         text-align: center;
 
-        @media (width <= 475px) {
-            padding: 30px 30px;
+        @media (width <= 900px) {
+            padding: 20px 30px;
         }
     }
 
@@ -272,6 +284,10 @@
     .score {
         color: var(--font-summary-score);
         font-weight: 700;
+
+        @media (width <= 900px) {
+            font-size: 1rem;
+        }
     }
 
     .score-dark {
@@ -282,6 +298,10 @@
     .reaction {
         background-color: var(--layout-reaction);
         color: var(--font-reaction);
+
+        @media (width <= 900px) {
+            font-size: 1rem;
+        }
     }
 
     .category {
@@ -294,16 +314,28 @@
     .memory {
         background-color: var(--layout-memory);
         color: var(--font-memory);
+
+        @media (width <= 900px) {
+            font-size: 1rem;
+        }
     }
 
     .verbal {
         background-color: var(--layout-verbal);
         color: var(--font-verbal);
+
+        @media (width <= 900px) {
+            font-size: 1rem;
+        }
     }
 
     .visual {
         background-color: var(--layout-visual);
         color: var(--font-visual);
+
+        @media (width <= 900px) {
+            font-size: 1rem;
+        }
     }
 
     .cont-btn {
@@ -316,6 +348,10 @@
         border-radius: 50px;
         text-decoration: none;
         margin-top: 30px;
+
+        @media (width <= 900px) {
+            margin-top: 15px;
+        }
     }
 
     .cont-btn:hover {
@@ -323,11 +359,17 @@
     }
 
     footer {
+        background-color: var(--layout-card-background);
+        width: 375px;
         font-size: 11px; 
         text-align: center;
         padding: 0;
         a > {
             color: hsl(228, 45%, 44%);
+        }
+
+        @media (width > 900px) {
+            background-color: var(--layout-main-background);
         }
     }
 }
