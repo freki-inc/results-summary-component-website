@@ -115,6 +115,10 @@
         height: 100%;
         width: 100%;
         padding: 20px;
+
+        @media (width <= 900px) {
+            padding: 0;
+        }
     }
 
     .container {
@@ -126,7 +130,12 @@
         background-color: var(--layout-card-background);
         border-radius: 30px;
         box-shadow: 7px 15px 20px var(--layout-card-box-shadow);
-        overflow: hidden;
+
+        @media (width <= 900px) {
+            grid-template-columns: 1fr;
+            max-width: 100%;
+            height: auto;
+        }
     }
 
     .result {
@@ -139,11 +148,20 @@
         align-items: center;
         justify-content: space-between;
         text-align: center;
+
+        @media (width <= 900px) {
+            padding: 30px 80px;
+        }
     }
 
     .result h1 {
         font-size: 24px;
         font-weight: 700;
+
+        @media (width <= 900px) {
+            font-size: 18px;
+            margin-top: 45px;
+        }
     }
 
     .main-score {
@@ -157,6 +175,11 @@
         border-radius: 100%;
         width: 190px;
         height: 190px;
+
+        @media (width <= 900px) {
+            width: 140px;
+            height: 140px;
+        }
     }
 
     .score-points {
@@ -164,22 +187,41 @@
         font-weight: 700;
         line-height: 1.2;
         color: var(--font-results-points);
+
+        @media (width <= 900px) {
+            font-size: 56px;
+        }
     }
 
     .score-points-secondary {
         font-size: 18px;
         font-weight: 500;
         color: var(--font-results-points-secondary);
+
+        @media (width <= 900px) {
+            font-size: 16px;
+        }
     }
 
     .result-text {
         font-size: 32px;
         font-weight: 700;
         color: var(--font-results-text);
+
+        @media (width <= 900px) {
+            font-size: 24px;
+            margin-top: 10px;
+        }
     }
 
     .result-description {
         font-weight: 500;
+
+        @media (width <= 900px) {
+            font-size: 16px;
+            margin-top: 10px;
+            line-height: 1.3;
+        }
     }
 
     .summary {
@@ -189,6 +231,10 @@
         align-items: center;
         justify-content: space-between;
         text-align: center;
+
+        @media (width <= 475px) {
+            padding: 30px 30px;
+        }
     }
 
     .summary h1 {
@@ -197,6 +243,11 @@
         align-self: flex-start;
         color: var(--font-summary-h1);
         margin-bottom: 25px;
+
+        @media (width <= 900px) {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
     }
 
     .box {
